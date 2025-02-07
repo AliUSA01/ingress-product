@@ -1,4 +1,4 @@
-package az.ingressproduct.dao.model.request;
+package az.ingressproduct.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,9 +11,14 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CreateProductRequest {
+public class ProductResponse {
+    private Long id;
     private String name;
     private String description;
     private BigDecimal price;
     private Integer quantity;
+
+
+
+
 }

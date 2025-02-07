@@ -1,15 +1,14 @@
 spring:
   application:
-    name: ms-ingress-product
+    name: ingress-product
   datasource:
-    url: jdbc://localhost:2222/product_db
+    url: jdbc:postgresql://localhost:4444/product_db
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: validate
-    show-sql: false
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+
+

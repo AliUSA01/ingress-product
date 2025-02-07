@@ -1,4 +1,4 @@
-package az.ingressproduct.dao.entity;
+package az.ingressproduct.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,7 +13,6 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
 public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +21,8 @@ public class ProductEntity {
     private String description;
     private BigDecimal price;
     private Integer quantity;
+
+
 
     @Override
     public boolean equals(Object o) {
