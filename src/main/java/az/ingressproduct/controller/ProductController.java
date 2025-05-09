@@ -1,6 +1,7 @@
 package az.ingressproduct.controller;
 
 import az.ingressproduct.model.request.CreateProductRequest;
+import az.ingressproduct.model.request.ReduceQuantityRequest;
 import az.ingressproduct.model.response.ProductResponse;
 import az.ingressproduct.service.abstraction.ProductService;
 import jakarta.validation.Valid;
@@ -21,7 +22,15 @@ public class ProductController {
         }
 
         @GetMapping("/{id}")
-        public ProductResponse getProduct(@PathVariable Long id)          {
+        public ProductResponse getProductById(@PathVariable Long id)          {
                 return productService.getProductById(id);
         }
+
+
+        @PostMapping("/reduceQuantity")
+        @ResponseStatus(HttpStatus.NO_CONTENT)
+        public void reduceQuantity(@RequestBody @Valid ReduceQuantityRequest reduceQuantityRequest){
+                productService.reduceQuantity(reduceQuantityRequest);
+        }
+
 }
