@@ -18,6 +18,13 @@ public class ErrorHandler {
 
 
     }
+    @ExceptionHandler(InsufficientQuantityException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handle(InsufficientQuantityException e){
+        return ErrorResponse.builder()
+                .message(e.getMessage())
+                .build();
+    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -26,6 +33,8 @@ public class ErrorHandler {
                 .message(e.getBindingResult().getFieldError().getDefaultMessage())
                 .build();
     }
+
+
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)

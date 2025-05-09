@@ -12,4 +12,8 @@ public class ApplicationConstants {
     public static final String PRICE_IS_REQUIRED = "Price is Required!";
 
     public static final String QUANTITY_IS_REQUIRED = "Quantity is required!";
+
+    public static final String PRODUCT_ID_IS_REQUIRED = "Product is required..";
+
+
 }
