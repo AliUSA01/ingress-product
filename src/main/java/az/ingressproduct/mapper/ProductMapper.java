@@ -24,7 +24,7 @@ public enum ProductMapper {
                     .name(productEntity.getName())
                     .description(productEntity.getDescription())
                     .price(productEntity.getPrice())
-                    .quantity(productEntity.getQuantity()       )
+                    .quantity(productEntity.getQuantity())
                     .build();
         }
 }
